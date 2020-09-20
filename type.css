@@ -1,3 +1,23 @@
-div a{
-	text-align: left;text-align: top;background-color:#FFD382;padding:200px;margin-bottom:5px;
+.head{
+	text-align:center;
+	background-color:#003344;
+	color:white;
+	font-weight:bold;
+	font-size:30px;
+}
+.content{
+	width:400px;
+	height:500px;
+	margin:auto;
+	background-color:#FFD382;
+	padding:5px;
+	overflow:scroll;
+	word-wrap:break-word; 
+}
+.bot{
+	width:400px;
+	height:30px;
+	background-color:#FCD3F2;
+	margin:auto;
+	padding:5px;
 }
