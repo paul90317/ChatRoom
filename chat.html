@@ -9,11 +9,20 @@
     <meta name="Description" content="this just a web test" />
     <title>ChatRoom</title>
 	<script language = "JavaScript" src ="function.js" ></script>
+	<link rel="stylesheet" href="type.css" type="text/css">
 </head>
 <body>
-	<script>
-		var name=location.href.split("?")[1];
-		document.write("<h3>"+name+"</h3>");
-	</script>
+	<h1>Chat room</h1>
+	<div style="background-color:#FFD382;padding:100px;">
+		<p id ='chatblock'></p>
+		<script>
+			var myname=location.href.split("?")[1];
+			var arr=[];
+		</script>
+	</div>
+	<form id='sendmsg'>
+		<input type='text' id='msg'/>
+		<input type='button' id='send' value='send' onclick='sendf(myname,arr)'/>
+	</form>
 </body>
 </html>

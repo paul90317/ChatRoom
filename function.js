@@ -1,5 +1,13 @@
 function loginf(){
 	const name = document.forms['login'].elements.name.value;
-	alert("wellcome "+name+"!");
-	window.location.assign("char.html?"+name);
+	window.location.assign("chat.html?"+name);
+}
+function sendf(myname,arr){
+	const msg = document.forms['sendmsg'].elements.msg.value;
+	arr.push(msg);
+	document.forms['sendmsg'].elements.msg.value="";
+	document.getElementById("chatblock").innerHTML="";
+	for(i=0;i<arr.length;i++){
+		document.getElementById("chatblock").innerHTML+= myname +": "+arr[i]+"<br/>";
+	}
 }
