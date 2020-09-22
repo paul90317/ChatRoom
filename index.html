@@ -9,7 +9,12 @@
     <meta name="Description" content="this just a web test" />
     <title>Chat room</title>
 	<link rel="stylesheet" href="type.css" type="text/css">
-	<script language = "JavaScript" src ="function.js" ></script>
+	<script>
+	function loginf(){
+		const name = document.forms['login'].elements.name.value;
+		window.location.assign("chat.html?"+name);
+	}
+	</script>
 </head>
 <body style = "margin:0px">
 	<div class="head">Chat room</div>
