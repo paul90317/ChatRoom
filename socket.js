@@ -1,4 +1,8 @@
-var socket = require('socket.io-client')('http://localhost:3000');
+var argv = location.href.split("?")[1];
+var name = argv.split("&")[0];
+var ip = "http://"+argv.split("&")[1]+":7777";
+var socket = require('socket.io-client')(ip);
+socket.emit("introduce",name);
 socket.on("update",function(msgs){
 	var str="";
 	for(i=0;i<msgs.length;i++){

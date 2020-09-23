@@ -10,14 +10,15 @@
     <title>Chat room</title>
 	<script language = "JavaScript" src ="bundle.js" ></script>
 	<link rel="stylesheet" href="style.css" type="text/css">
+	<script>
+		var argv = location.href.split("?")[1];
+		var myname = argv.split("&")[0];
+	</script>
 </head>
 <body style = "margin:0px">
 	<div class="head">Chat room</div>
 	<div class="content">
 		<p id ='chatblock'></p>
-		<script>
-			var myname=location.href.split("?")[1];
-		</script>
 	</div>
 	<form id='sendmsg' class="bot">
 		<input type='text' id='msgbar'/>

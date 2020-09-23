@@ -1,26 +1,26 @@
-var http = require("http",function(req,res){
-	/*res.setHeader('Content-Type','text/html')
-	const fs=require('fs')
-	const html=fs.readFileSync("index.html",'utf-8')
-	res.write(html)
-	console.log("login...")
-	res.end("hello!");*/
-}).createServer();
-http.listen(3000,function(){
-	console.log("server listen to http port 3000...")
+var http = require("http",function(req,res){}).createServer();
+var fs = require('fs')
+var data = "";
+	
+http.listen(7777,function(){
+	console.log("server listen to http port 7777...")
 });
 var msgs = [];
 var io = require("socket.io")(http)
 io.on("connection",function(socket){
-	let str = "someone join to chat room!";
-	console.log(str);
-	msgs.push(str+"<br/>");
-	socket.emit("update",msgs);
-	socket.on("msg",function(myname,msg){
-		let str = myname+": "+msg;
-		msgs.push(str+"<br/>")
-		console.log(str)
+	socket.on("introduce",function(name){
+		console.log(name+" connect ...");
+		msgs.push(name+" join to chat room!<br/>");
 		socket.emit("update",msgs);
+		data += name+" connect ...\n";
+		fs.writeFileSync("msglog.txt",data);
+	})
+	socket.on("msg",function(myname,msg){
+		console.log(myname+" send: "+msg);
+		msgs.push(myname+": "+msg+"<br/>")
+		socket.emit("update",msgs);
+		data += myname+" send: "+msg+"\n";
+		fs.writeFileSync("msglog.txt",data);
 	})
 })
 

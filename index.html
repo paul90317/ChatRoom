@@ -11,16 +11,17 @@
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<script>
 	function loginf(){
-		const name = document.forms['login'].elements.name.value;
-		window.location.assign("chat.html?"+name);
+		var name = document.forms['login'].elements.name.value;
+		var ip = document.forms['login'].elements.ip.value;
+		window.location.assign("chat.html?"+name+"&"+ip);
 	}
 	</script>
 </head>
 <body style = "margin:0px">
 	<div class="head">Chat room</div>
 	<form name='login' id='login' class="block">
-		Nick Name :
-		<input type='text' id='name' value="chater"/><p> 
+		http://<input type='text' id='ip' value="localhost"/>:7777<p/>
+		Nick Name :<input type='text' id='name' value="chater"/><p/> 
 		<input type='button' id='enter' value='enter' onclick='loginf()'/>
 	</form>
 </body>
