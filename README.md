@@ -10,5 +10,5 @@ npm install -g browserify
 ```cmd
 browserify tourfile.js -o bundle.js
 ```
-## chat room link
+## Chat room link
 [click this](https://paul90317.github.io/ChatRoom/)
